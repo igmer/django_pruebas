@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Sexo</th>
+        <th>Edad</th>
+        <th>Fecha Rescate</th>
+        <th>Dueño</th>
+    </thead>
+    <tbody>
+        {% for m in mascota %}
+        <tr>
+            <td>{{ m.id }}</td>
+            <td>{{ m.nombre }}</td>
+            <td>{{ m.sexo }}</td>
+            <td>{{ m.edad }}</td>
+            <td>{{ m.fecha_rescate }}</td>
+            <td>{{ m.persona.nombre }} -{{ m.persona.apellido }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
